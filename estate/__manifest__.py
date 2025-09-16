@@ -3,7 +3,7 @@
     "version": "18.0.1.0.1",  # Version
     "application": True,  # This line says the module is an App, and not a module
     "depends": ["base"],  # dependencies
-    "data": [
+    "data": [ "security/ir.model.access.csv"
 
     ],
     "installable": True,
