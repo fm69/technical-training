@@ -81,6 +81,7 @@
                     <filter string="Postcode" name="postcode" context="{'group by':'postcode'}"/>
                 </group>
             </search>
+        </field>
     </record>
 
 </odoo>
