@@ -14,6 +14,8 @@ class EstateProperty(models.Model):
     selling_price = fields.Float(readonly=True, copy=False)
     bedrooms = fields.Integer()
     gardens = fields.Boolean()
+    postcode = fields.Char()
+    living_area = fields.Float()
     garden_orientation =  fields.Selection([("north", "North"), ("south", "South"), ("east", "East"), ("west", "West")])
     active = fields.Boolean(default=True)
     state = fields.Selection(
