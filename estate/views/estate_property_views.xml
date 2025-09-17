@@ -15,6 +15,11 @@
         <field name="res_model">estate.property.tag</field>
         <field name="view_mode">form</field>
     </record>
+    <record id="estate_property_offer_action" model="ir.actions.act_window">
+        <field name="name">Estate property offer action</field>
+        <field name="res_model">estate.property.offer</field>
+        <field name="view_mode">list</field>
+    </record>
 
     <!--    Form view   -->
 
@@ -54,6 +59,10 @@
                                     <field name="garden_orientation"/>
                                 </group>
                             </group>
+                        </page>
+                    </notebook>
+                    <notebook>
+                        <page string="Offers">
                         </page>
                     </notebook>
                 </sheet>
