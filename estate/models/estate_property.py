@@ -68,8 +68,10 @@ class EstateProperty(models.Model):
         self.state = "cancelled"
 
     _sql_constraints = [
-        ("check_selling_price", "CHECK(selling_price<=0)","The selling price must be positive.")
+        ("check_selling_price", "CHECK(selling_price >=0)","The selling price must be positive.")
     ]
+
+
 
 
 
