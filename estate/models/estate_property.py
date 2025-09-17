@@ -9,6 +9,7 @@ class EstateProperty(models.Model):
     _name = "estate_property"
     _description = "Estate Property"
 
+
     name = fields.Char(required=True)
     description =  fields.Text()
     date_available = fields.Date(copy=False, default=lambda self: fields.Date.add(fields.Date.today(),month=9))
@@ -37,6 +38,10 @@ class EstateProperty(models.Model):
     offer_ids = fields.One2many("estate.property.offer","property_id")
     total_area = fields.Integer(compute="_compute_total_area")
     best_price = fields.Float(compute="_compute_best_price")
+
+    _sql_constraints = [
+        ("check_selling_price", "CHECK(selling_price >=0)", "The selling price must be positive.")
+    ]
 
     @api.depends("garden_area", "living_area")
     def _compute_total_area(self):
@@ -67,9 +72,7 @@ class EstateProperty(models.Model):
     def action_cancel_property(self):
         self.state = "cancelled"
 
-    _sql_constraints = [
-        ("check_selling_price", "CHECK(selling_price >=0)","The selling price must be positive.")
-    ]
+
 
 
 
