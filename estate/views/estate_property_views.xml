@@ -73,6 +73,7 @@
                         <page string="Other Info">
                             <field name="salesperson_id" string="Salesperson"/>
                             <field name="buyer_id" string="Buyer"/>
+                        </page>
                     </notebook>
                 </sheet>
             </form>
