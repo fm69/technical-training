@@ -8,7 +8,7 @@
                 <sheet>
                     <div class="oe_title">
                         <h1 class="mb32">
-                            <field name="name" class="mb16"/>
+                            <field name="partner_id" class="mb16"/>
                         </h1>
                     </div>
                     <group>
