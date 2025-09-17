@@ -67,6 +67,9 @@ class EstateProperty(models.Model):
     def action_cancel_property(self):
         self.state = "cancelled"
 
+    _sql_constraints = [
+        ("check_selling_price", "CHECK(selling_price>=0)","The selling price must be positive.")
+    ]
 
 
 
