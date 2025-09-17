@@ -2,7 +2,7 @@ from calendar import month
 from dataclasses import Field
 from email.policy import default
 
-from odoo import fields, models
+from odoo import api, fields, models
 
 class EstateProperty(models.Model):
     _name = "estate_property"
@@ -37,18 +37,18 @@ class EstateProperty(models.Model):
     total_area = fields.Integer(compute="_compute_total_area")
     best_price = fields.Float(compute="_compute_best_price")
 
-@api.depends("garden_area", "living_area")
-def _compute_total_area(self):
-    for property in self:
-        property.total_area = property.living_area + property.garden_area
+    @api.depends("garden_area", "living_area")
+    def _compute_total_area(self):
+        for property in self:
+            property.total_area = property.living_area + property.garden_area
 
-@api.depends("offer_ids.price")
-def _compute_best_price(self):
-    for property in self:
-        if property.offer_ids:
-            property.best_price = max(property.offer_ids.mapped("price"))
-        else:
-            property.best_price = 0
+    @api.depends("offer_ids.price")
+    def _compute_best_price(self):
+        for property in self:
+            if property.offer_ids:
+                property.best_price = max(property.offer_ids.mapped("price"))
+            else:
+                property.best_price = 0
 
 
 
