@@ -80,6 +80,7 @@
                 <group expand="1" string="Group By">
                     <filter string="Postcode" name="postcode" context="{'group_by':'postcode'}"/>
                     <filter string="Bedrooms" name="bedrooms" context="{'group_by':'bedrooms'}"/>
+                    <filter string="Garden Orientation" name="garden_orientation" context="{'group_by':'garden_orientation'}"/>
                 </group>
             </search>
         </field>
