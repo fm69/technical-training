@@ -1,11 +1,12 @@
 from calendar import month
 from dataclasses import Field
+from email.policy import default
 
 from odoo import fields, models
 
 class EstateProperty(models.Model):
     _name = "estate_property"
-    _description = "Estate Poperty"
+    _description = "Estate Property"
 
     name = fields.Char(required=True)
     description =  fields.Text()
@@ -28,6 +29,12 @@ class EstateProperty(models.Model):
         copy=False,
         required=True,
     )
+    property_type_id = fields.Many2one("estate.property.type")
+    salesperson_id = fields.Many2one("res.users", default=lambda self: self.env.user)
+    buyer_id = fields.Many2one("res.partner", copy=False)
+    tag_id = fields.Many2one("estate.property.tag")
+    offer_ids = fields.One2many("estate.property.offer","property_id")
+
 
 
 
