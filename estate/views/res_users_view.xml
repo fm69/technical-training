@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<odoo>
+    <record id="res_users_view_form" model = "ir_ui_view">
+        <field name="name">res.users.view.form.inherit.estate</field>
+        <field name="model">res.users</field>
+        <field name="inherid_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page name="property_ids" string="Properties">
+                    <field name="property_ids"/>
+                </page>
+            </xpath>
+    </record>
+</odoo>
