@@ -61,6 +61,10 @@
                             </group>
                         </page>
                         <page string="Offers">
+                            <field name="partner_id"/>
+                            <field name="status"/>
+                            <field name="price"/>
+                            <field name="property_id"/>
 
                         </page>
                     </notebook>
