@@ -65,7 +65,7 @@ class EstateProperty(models.Model):
             property.state = "sold"
 
     def action_cancel_property(self):
-        self.state = "sold"
+        self.state = "cancelled"
 
 
 
