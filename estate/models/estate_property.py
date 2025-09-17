@@ -2,7 +2,8 @@ from calendar import month
 from dataclasses import Field
 from email.policy import default
 
-from odoo import api, fields, models
+from odoo import _, api, fields, models
+from odoo.exceptions import UserError
 
 class EstateProperty(models.Model):
     _name = "estate_property"
@@ -56,6 +57,18 @@ class EstateProperty(models.Model):
             self.garden_orientation = "north"
         else:
             self.garden_area = self.garden_orientation = False
+
+    def action_sell_property(self):
+        for property in self:
+            if property.state == "cancelled":
+                raise UserError(_("Canceled property could not sold!"))
+            property.state = "sold"
+
+    def action_sell_property(self):
+        self.state = "sold"
+
+
+
 
 
 
