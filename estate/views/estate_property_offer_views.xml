@@ -8,6 +8,7 @@
                     <field name="partner_id"/>
                     <field name="status"/>
                     <field name="price"/>
+                     <field name="validity" string="Validate (days)"/>
                     <field name="property_id"/>
                 </list>
             </field>
