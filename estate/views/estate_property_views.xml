@@ -71,8 +71,12 @@
                             <field name="offer_ids"/>
                         </page>
                         <page string="Other Info">
-                            <field name="salesperson_id" string="Salesperson"/>
-                            <field name="buyer_id" string="Buyer"/>
+                            <group>
+                                <group>
+                                    <field name="salesperson_id" string="Salesperson"/>
+                                    <field name="buyer_id" string="Buyer"/>
+                                </group>
+                            </group>
                         </page>
                     </notebook>
                 </sheet>
